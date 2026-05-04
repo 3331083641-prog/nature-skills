@@ -23,6 +23,25 @@ The main strategy should come from the course notes in `Chapter1-Week1-7`. The r
 - Do not let AI draft the paper's core scientific argument from scratch.
 - If the draft is Chinese or structurally rough, reconstruct the logic first and the prose second.
 
+## Code-Evidence Guardrail
+
+Use the shared `code-evidence-guardrail` overlay when the user asks for code-grounded,
+implementation-faithful, repository-accurate, or verification-oriented writing, or when
+the task explains supplied code or strengthens factual claims about what code, a model,
+package, script, pipeline, training, inference, evaluation, preprocessing, or plotting does.
+
+For language-only polishing, translation, formatting, or document summarization, do not
+inspect code by default. Only avoid adding, strengthening, or making more certain any
+implementation claims already present in the source text.
+
+The main skill controls style, structure, audience, and output format. The guardrail
+controls whether implementation claims are supported, cautious, attributed, flagged, or
+omitted.
+
+When full code-grounding is requested, load the shared guardrail spec when available:
+`../code-evidence-guardrail/references/spec.md`. If unavailable, apply the short
+guardrail rules in this section.
+
 ## When to open extra files
 
 These files are reference support. Use them after the section's rhetorical job is clear.

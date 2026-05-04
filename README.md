@@ -18,6 +18,17 @@
 
 ---
 
+## Shared guardrails
+
+Shared guardrails are overlay specifications used by primary skills; they do not replace
+task-specific writing workflows.
+
+| Guardrail | Status | Purpose | Invocation |
+|-----------|--------|---------|------------|
+| [`code-evidence-guardrail`](code-evidence-guardrail/README.md) | Draft | Overlay for keeping implementation claims faithful to inspected code evidence | Usually invoked by primary writing skills; can also be explicitly requested for code-faithfulness audits |
+
+---
+
 ## nature-figure
 
 **What it does** — Generates multi-panel matplotlib figures that match *Nature* journal

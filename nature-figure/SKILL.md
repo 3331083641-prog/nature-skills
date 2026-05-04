@@ -19,6 +19,21 @@ Color policy: prefer **unified method families across all panels** over maximal 
 For dense Nature Machine Intelligence-style figure pages, use the low-saturation `NMI pastel`
 family described in `references/api.md` and reserve green/red mainly for gains, drops, and other directional cues.
 
+## Code-Evidence Guardrail
+
+Apply the shared `code-evidence-guardrail` overlay only when describing plotting scripts,
+figure-generation workflows, preprocessing code, statistical code, result aggregation
+code, or any claim about how a figure was computationally produced.
+
+Do not apply it to ordinary figure design, visual layout, graphical polish, or caption
+style unless implementation claims are introduced or strengthened.
+
+This guardrail does not override the backend-selection gate for figure generation or
+visual QA.
+
+For full code-grounding or verification, load
+`../code-evidence-guardrail/references/spec.md` when available.
+
 ## First move: figure contract before plotting
 
 Before generating or editing code, establish the contract below.

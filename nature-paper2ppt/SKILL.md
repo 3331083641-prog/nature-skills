@@ -31,6 +31,24 @@ The default slide logic should help the audience answer, in order:
 
 This is more important than copying the paper section order.
 
+# Code-Evidence Guardrail
+
+For paper-only slide decks, treat implementation claims as claims from the source paper.
+Do not inspect code by default, and do not present paper claims as independently verified
+code facts unless the user supplies code/repo materials or asks for code-grounded accuracy.
+
+Use the shared `code-evidence-guardrail` overlay when the user asks to make the deck
+accurate to code, verify implementation claims against a repo, explain supplied code, or
+create slides from code/repository evidence.
+
+For ordinary paper-to-slide conversion, summarization, or visual restructuring, only avoid
+adding, strengthening, or making more certain implementation claims beyond what the source
+paper supports.
+
+When full code-grounding is requested, load the shared guardrail spec when available:
+`../code-evidence-guardrail/references/spec.md`. If unavailable, apply the short
+guardrail rules in this section.
+
 # Lean Operating Mode
 Default to the lowest-overhead workflow that still produces a usable PPTX.
 
