@@ -1,1 +1,18 @@
 .DS_Store
+
+# Python / local tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Generated skill outputs
+output/
+outputs/
+generated/
+
+# OS / editor noise
+Thumbs.db
+.idea/
+.vscode/

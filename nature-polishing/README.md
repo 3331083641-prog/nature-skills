@@ -4,8 +4,8 @@ An academic-writing skill for polishing, restructuring, and translating manuscri
 
 Source hierarchy:
 
-- `Main strategy`: the course notes in `Chapter1-Week1-7 完整版（full version).pdf`
-- `Reference support`: `Academic-Phrasebank-Navigable-PDF-2023.pdf`
+- `Main strategy`: scientific-writing course principles distilled into `references/writing-strategy.md`
+- `Reference support`: Academic Phrasebank-derived move and phrase families in `references/`
 
 ## What changed
 
@@ -21,6 +21,7 @@ nature-polishing/
 ├── SKILL.md
 ├── README.md
 └── references/
+    ├── writing-strategy.md
     ├── phrasebank-playbook.md
     ├── section-moves.md
     └── style-guardrails.md
@@ -48,6 +49,7 @@ The skill should:
 
 ## Reference map
 
+- `writing-strategy.md`: argument diagnosis, hourglass logic, claim/evidence/boundary checks
 - `section-moves.md`: section order and move patterns
 - `phrasebank-playbook.md`: hedging, transitions, evidence, limitations, future work
 - `style-guardrails.md`: British style, articles, abbreviations, units, register, overclaim control

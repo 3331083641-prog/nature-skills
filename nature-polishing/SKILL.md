@@ -12,7 +12,8 @@ Use this skill to improve scientific writing at two levels:
 - `main strategy`: paper architecture, section logic, reader workflow, evidence thresholds, and ethics
 - `reference support`: reusable phrase families, move patterns, transitions, and style checks
 
-The main strategy should come from the course notes in `Chapter1-Week1-7`. The reference wording layer should come from `Academic Phrasebank`.
+The main strategy lives in `references/writing-strategy.md`. The wording layer lives in the
+Academic Phrasebank-derived files under `references/`.
 
 ## Default stance
 
@@ -25,10 +26,12 @@ The main strategy should come from the course notes in `Chapter1-Week1-7`. The r
 
 ## When to open extra files
 
-These files are reference support. Use them after the section's rhetorical job is clear.
+Load only the file needed for the current task. Use `writing-strategy.md` for structural
+rewrites; use the other files after the section's rhetorical job is clear.
 
 | File | Open when |
 |---|---|
+| [references/writing-strategy.md](references/writing-strategy.md) | You need paragraph or section-level reconstruction, argument diagnosis, or hourglass logic |
 | [references/section-moves.md](references/section-moves.md) | You need section-specific move orders or phrase patterns derived from Academic Phrasebank |
 | [references/phrasebank-playbook.md](references/phrasebank-playbook.md) | You need hedging, transition, evidence, limitation, or future-work phrase families |
 | [references/style-guardrails.md](references/style-guardrails.md) | You need academic-style checks, paragraph/sentence checks, article use, register, or mechanics |

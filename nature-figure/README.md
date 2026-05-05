@@ -65,7 +65,7 @@ inside a larger *Nature*-style result figure.
 
 ```
 nature-figure/
-├── SKILL.md                     ← skill trigger & overview (loaded by Claude automatically)
+├── SKILL.md                     ← skill trigger & overview (loaded by the agent automatically)
 ├── README.md                    ← this file
 ├── assets/
 │   ├── gallery/                 ← result-figure preview PNGs
@@ -161,13 +161,13 @@ plt.rcParams['svg.fonttype'] = 'none'
 
 # ── Style ──────────────────────────────────────────────────────────────────────
 plt.rcParams.update({
-    'font.size': 12,
+    'font.size': 7,                 # journal-final default; use 12-16 for slide previews
     'axes.spines.right': False,
     'axes.spines.top': False,
-    'axes.linewidth': 2.0,
+    'axes.linewidth': 0.8,
     'legend.frameon': False,
-    'xtick.major.width': 1.5,
-    'ytick.major.width': 1.5,
+    'xtick.major.width': 0.6,
+    'ytick.major.width': 0.6,
 })
 
 # ── Figure ──────────────────────────────────────────────────────────────────────
@@ -372,7 +372,9 @@ Use lowercase bold (`a`, `b`, `c`) at top-left of each subplot axes, placed via 
 
 | Context | `font.size` |
 |---------|-------------|
-| Base (compact subfigures) | 12–16 |
+| Journal-final dense composite | 7–9 |
+| Ultra-dense annotations | 5–7 |
+| Slide or notebook preview | 12–16 |
 | Large bar panels (figsize > 28 in) | 24 |
 | Axis labels (large panels) | 32–54 via per-label override |
 | In-bar / in-cell annotations | 6.5–12 |
@@ -415,7 +417,7 @@ def luminance_text_color(hex_color):
 - [ ] **Lines 1–3**: `font.family`, `font.sans-serif` (three fonts), `svg.fonttype = 'none'`
 - [ ] Primary output is **SVG** (`bbox_inches='tight'`)
 - [ ] Right and top spines off; `legend.frameon = False`
-- [ ] Font size matches final use: 5–7 pt for dense journal output, larger only for slide-sized panels
+- [ ] Font size matches final use: 7–9 pt for dense journal output, 12–16 pt only for slide/notebook previews
 - [ ] Colors come from one coherent palette system: either semantic `PALETTE` or unified `PALETTE_NMI_PASTEL`
 - [ ] Related model sizes / variants share a hue family; do not assign unrelated saturated colors to siblings
 - [ ] Green / red reserved for gains, drops, thresholds, or truly signed semantics

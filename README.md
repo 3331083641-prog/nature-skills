@@ -15,7 +15,7 @@
 
 | Skill | Status | Purpose | Trigger keywords |
 |-------|--------|---------|-----------------|
-| [`nature-figure`](nature-figure/README.md) | Stable | Publication-ready matplotlib figures | "Nature figure", "publication plot", "scientific figure" |
+| [`nature-figure`](nature-figure/README.md) | Stable | Publication-ready Python/R figures | "Nature figure", "publication plot", "scientific figure" |
 | [`nature-polishing`](nature-polishing/README.md) | Stable | Academic prose polishing to *Nature* style | "Nature style", "polish", "academic writing" |
 | [`nature-data`](nature-data/README.md) | Draft | Nature Data Availability statements, repository plans, and FAIR checks | "Data Availability", "repository", "FAIR metadata", "数据可用性声明" |
 | [`nature-paper2ppt`](nature-paper2ppt/README.md) | Beta | Chinese PPTX decks from scientific papers | "paper PPT", "journal club", "文献汇报", "论文做成PPT" |
@@ -24,11 +24,31 @@
 
 ---
 
+## Harness
+
+This repository includes a lightweight local harness for skill discovery, validation,
+matching, and launch-prompt assembly:
+
+```bash
+python harness/skill_engine.py list
+python harness/skill_engine.py validate
+python harness/skill_engine.py match "帮我把这篇论文做成文献汇报PPT"
+python harness/skill_engine.py launch nature-polishing --request "Polish this abstract"
+```
+
+The harness uses only the Python standard library. It treats the root README Skill index
+and each skill README as the human-authored source of truth, then checks whether the
+machine-readable skill surface still matches those docs. It is designed to catch stale
+skill metadata, missing references, broken internal links, and duplicated launch surface
+before a new skill is added.
+
+---
+
 ## nature-figure
 
-**What it does** — Generates multi-panel matplotlib figures that match *Nature* journal
-visual standards: correct typography, semantic colour palette, editable SVG output,
-and non-redundant panel information architecture.
+**What it does** — Generates or audits multi-panel Python/R figures that match *Nature*
+journal visual standards: correct typography, semantic colour palette, editable SVG/PDF
+output, and non-redundant panel information architecture.
 
 **Example output gallery** — Five dense, simulated *Nature*-style result figures are
 included in the [`nature-figure` gallery](nature-figure/README.md#example-output-gallery):
@@ -79,11 +99,17 @@ nature-figure/
 ├── README.md
 ├── SKILL.md
 └── references/
-    ├── api.md            PALETTE, helper signatures, validation rules
-    ├── design-theory.md  Typography, layout, export policy, anti-redundancy rules
-    ├── common-patterns.md Ultra-wide panels, legend axes, print-safe bars
-    ├── tutorials.md      End-to-end walkthroughs (bars, trends, heatmaps)
-    └── chart-types.md    Radar, 3D sphere, scatter, fill_between, log-scale
+    ├── figure-contract.md       Core conclusion, evidence hierarchy, panel map
+    ├── backend-selection.md     Python vs R selection rules
+    ├── r-workflow.md            ggplot2/patchwork/ComplexHeatmap track
+    ├── r-template-index.md      Private R template adaptation rules
+    ├── qa-contract.md           Figure-package QA checklist
+    ├── api.md                   Python palette, helper signatures, validation rules
+    ├── design-theory.md         Typography, layout, export policy, anti-redundancy rules
+    ├── common-patterns.md       Python layout patterns and reusable snippets
+    ├── nature-2026-observations.md Real Nature page archetypes
+    ├── tutorials.md             End-to-end walkthroughs
+    └── chart-types.md           Radar, 3D sphere, scatter, fill_between, log-scale
 ```
 
 **Supported chart types** — Stacked bar, grouped bar, horizontal ablation bar, trend/line,
@@ -98,9 +124,9 @@ illustration, fill-between area, log-scale bar, GridSpec multi-panel.
 into prose matching *Nature* journal conventions: ≤ 30-word sentences, section-aware
 tense and hedging, precise vocabulary, correct citation practice, and British English.
 
-**Built from** — Close reading of five *Nature* s41586 papers (2026) and a graduate-level
-scientific English writing course; 25 rules extracted across sentence architecture,
-paper structure, vocabulary, citation integrity, house style, and AI ethics.
+**Built from** — A graduate-level scientific writing strategy layer and Academic
+Phrasebank-derived phrase support, with additional guardrails for section logic,
+claim strength, citation integrity, house style, and AI ethics.
 
 **Key rules enforced**
 
@@ -113,18 +139,22 @@ paper structure, vocabulary, citation integrity, house style, and AI ethics.
 | Overclaim detection | Flag absolutes, unwarranted causation, scope expansion, unverified "first" claims |
 | British English | signalling, colour, analyse, programme, modelling, behaviour |
 
-**12-step polishing workflow**
+**Core polishing workflow**
 
-Sentence split → Section ID → Hourglass check → Tense audit → Sentence edit →
-Vocabulary upgrade → Template check → Citation audit → House style → Overclaim →
-Proofreading → Plain-text output
+Paper-type diagnosis → Section job → Paragraph logic → Claim/evidence/boundary check →
+sentence polish → phrase support → citation/ethics audit → final prose and revision notes
 
 **Reference files**
 
 ```
 nature-polishing/
 ├── README.md
-└── SKILL.md    25 rules + 12-step workflow (loaded by Claude automatically)
+├── SKILL.md
+└── references/
+    ├── writing-strategy.md
+    ├── section-moves.md
+    ├── phrasebank-playbook.md
+    └── style-guardrails.md
 ```
 
 ---
