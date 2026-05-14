@@ -81,15 +81,39 @@ If you prefer not to use the terminal, copying the `skills/nature-*` folder(s) i
 
 ### 2. Claude Code
 
-Claude Code does **not** currently load Codex-style `SKILL.md` folders as native skills.
-Its closest reusable primitives are:
+**Primary method: Plugin marketplace installation**
 
-- **Subagents**: `~/.claude/agents/` or `.claude/agents/`
-- **Custom slash commands**: `~/.claude/commands/` or `.claude/commands/`
+This repository is published as a Claude Code plugin. This is the recommended installation path.
 
-The recommended approach is to convert a skill into a **subagent**.
+**Add the marketplace**
 
-**Create a user-level subagent**
+```bash
+claude plugins marketplace add nature-skills https://github.com/Yuan1z0825/nature-skills
+```
+
+Or inside Claude Code:
+
+```
+/plugin marketplace add https://github.com/Yuan1z0825/nature-skills
+```
+
+**Install the plugin**
+
+```bash
+claude plugins install nature-skills
+```
+
+Or inside Claude Code:
+
+```
+/plugin install nature-skills
+```
+
+Then run `/reload-plugins` inside Claude Code. All nine skills will be available automatically.
+
+**Alternative: subagent or slash-command wrapper**
+
+If you prefer a manual setup or need to customise individual skills:
 
 ```bash
 mkdir -p ~/.claude/agents
