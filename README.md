@@ -1,9 +1,9 @@
 # nature-skills
 <img width="5750" height="6928" alt="combined_grid" src="https://github.com/user-attachments/assets/695b7721-a3eb-4bec-bfcf-d85b8d3d824a" />
 
-A growing collection of Claude skills for producing academic work at *Nature*-journal
-standard — covering scientific figures, manuscript prose, and (in future releases) related
-tasks such as statistical reporting, peer-review responses, and methods writing.
+A growing collection of reusable skills for producing academic work at *Nature*-journal
+standard — covering scientific figures, manuscript prose, data availability, and peer-review
+responses, with room to expand into related editorial tasks.
 
 Every skill in this collection shares a common philosophy: rules are derived from
 **primary sources** (published *Nature* papers, journal author guidelines, and structured
@@ -17,7 +17,8 @@ writing curricula), not from general style intuition.
 |-------|--------|---------|-----------------|
 | [`nature-figure`](nature-figure/README.md) | Stable | Publication-ready matplotlib figures | "Nature figure", "publication plot", "scientific figure" |
 | [`nature-polishing`](nature-polishing/README.md) | Stable | Academic prose polishing to *Nature* style | "Nature style", "polish", "academic writing" |
-| [`nature-data`](nature-data/README.md) | Draft | Nature Data Availability statements, repository plans, and FAIR checks | "Data Availability", "repository", "FAIR metadata", "数据可用性声明" |
+| [`nature-data`](nature-data/README.md) | Beta | Nature Data Availability statements, repository plans, and FAIR checks | "Data Availability", "repository", "FAIR metadata", "数据可用性声明" |
+| [`nature-response`](nature-response/README.md) | Beta | Point-by-point Nature-style responses to reviewers and editors | "response to reviewers", "rebuttal", "逐条回复", "返修说明" |
 
 > **Adding a new skill?** Follow the [contribution guide](#adding-a-new-skill) at the bottom of this file.
 
@@ -95,7 +96,7 @@ Proofreading → Plain-text output
 ```
 nature-polishing/
 ├── README.md
-└── SKILL.md    25 rules + 12-step workflow (loaded by Claude automatically)
+└── SKILL.md    25 rules + 12-step workflow
 ```
 
 ---
@@ -142,6 +143,50 @@ nature-data/
 
 ---
 
+## nature-response
+
+**What it does** — Prepares and audits point-by-point responses to reviewers, editor response
+notes, and revision-cover text for Nature-family and Springer Nature submissions. It is
+bilingual-aware: Chinese author notes such as "回复审稿人", "逐条回复", "返修说明",
+"编辑意见", and "补充实验" are converted into precise submission-ready English with Chinese
+action notes.
+
+**Built from** — Springer Nature revision guidance, Nature Portfolio author guidance,
+transparent peer review practice, and real peer review files from Nature-family journals.
+
+**Key rules enforced**
+
+| Domain | Core rule |
+|--------|-----------|
+| Point-by-point structure | Give one explicit response per reviewer point |
+| Action mapping | State what changed, why it changed, and where it changed |
+| Non-adoption | When a request is not followed, give a scientific reason and the closest alternative |
+| Tone | Keep responses respectful, specific, and non-defensive |
+| Evidence discipline | Do not invent experiments, analyses, line numbers, or manuscript edits |
+| Chinese alignment | Translate vague revision language into concrete English response blocks |
+
+**Reference files**
+
+```text
+nature-response/
+├── README.md
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+├── scripts/
+│   ├── lint_response.py
+│   └── response_template.py
+└── references/
+    ├── chinese-author-alignment.md
+    ├── real-world-patterns.md
+    ├── response-structure.md
+    ├── source-basis.md
+    ├── tutorials.md
+    └── tone-and-risk.md
+```
+
+---
+
 ## Shared design principles
 
 All skills in this collection adhere to the following:
@@ -171,7 +216,7 @@ nature-<topic>/
 
 | File | Required | Purpose |
 |------|----------|---------|
-| `SKILL.md` | Yes | Frontmatter (`name`, `description`) + rules + workflow; loaded by the agent after triggering |
+| `SKILL.md` | Yes | Frontmatter (`name`, `description`) + rules + workflow; loaded after the skill triggers |
 | `README.md` | Yes | Human-readable reference in full English |
 | `references/*.md` | Recommended for complex skills | Modular rule files (api, design theory, tutorials, chart types, …) |
 
@@ -197,7 +242,7 @@ Add a row to the [Skill index](#skill-index) table above:
 | Label | Meaning |
 |-------|---------|
 | `Draft` | Rules defined; not yet tested on real examples |
-| `Beta` | Tested on examples; edge cases may remain |
+| `Beta` | Tested on realistic examples and source-checked; edge cases may remain |
 | `Stable` | Validated on real academic content; rules are settled |
 
 ---
@@ -209,7 +254,6 @@ The following are documented gaps. Contributions welcome.
 | Candidate | Scope | Priority |
 |-----------|-------|----------|
 | `nature-stats` | Statistical reporting conventions for *Nature* (effect sizes, confidence intervals, p-value formatting, sample size statements) | High |
-| `nature-response` | Peer-review response letters — point-by-point reply structure, tone calibration, handling major vs. minor revisions | High |
 | `nature-methods` | Deep-dive Methods writing assistant — reproducibility checklist, forbidden phrases, ethical approval templates, supplementary organisation | Medium |
 | `nature-cover` | Cover letter drafting — hook paragraph, significance framing, fit-to-journal argument, ≤ 500-word limit | Medium |
 | `nature-review` | Writing a literature review or review article in *Nature Reviews* style — synthesis vs. summary, argument-led structure | Low |

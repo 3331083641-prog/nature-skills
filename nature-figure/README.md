@@ -10,7 +10,7 @@ Derived from production scripts in [figures4papers](https://github.com/ChenLiu-1
 
 ```
 nature-figure/
-├── SKILL.md                     ← skill trigger & overview (loaded by Claude automatically)
+├── SKILL.md                     ← skill trigger & overview
 ├── README.md                    ← this file
 └── references/
     ├── api.md                   ← PALETTE constants, helper function signatures

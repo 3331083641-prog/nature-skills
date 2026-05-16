@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nature Response"
+  short_description: "Draft Nature-style reviewer responses"
+  default_prompt: "Use $nature-response to turn reviewer comments and revision notes into a point-by-point Nature-style response package."
