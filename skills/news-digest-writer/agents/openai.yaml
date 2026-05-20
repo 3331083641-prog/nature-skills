@@ -1,0 +1,4 @@
+interface:
+  display_name: "News Digest Writer"
+  short_description: "从指定网页筛选相关新闻内容并按固定模板生成中文新闻稿"
+  default_prompt: "打开指定新闻网页，筛选符合规则的内容，并按固定模板写成中文新闻稿。"
