@@ -39,6 +39,8 @@
     "privacyPolicyURL": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
     "termsOfServiceURL": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
     "brandColor": "#2563EB",
+    "composerIcon": "./assets/nature-skills-icon.png",
+    "logo": "./assets/nature-skills-icon.png",
     "screenshots": []
   }
 }
