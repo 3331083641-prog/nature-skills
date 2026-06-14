@@ -11,6 +11,8 @@
       <b></b><br>
     </td>
     <td align="center">
+      <b>6.17投资交流会</b>
+      <img width="400" alt="6.17投资交流会" src="https://github.com/user-attachments/assets/bfa8d4c4-2c99-4cb2-8534-db8dd45b3e0a" />
       <b>个人微信</b><br>
       <img width="400" alt="个人微信" src="https://github.com/user-attachments/assets/9e2931fb-748b-418e-97ab-0515d191633d" />
     </td>
