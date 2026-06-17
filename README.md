@@ -1,10 +1,5 @@
 # nature-skills
-大家好，我是nature skills的创立者袁一哲，从github以及其他途径联系我的顶尖AI人才数不胜数，所以我成立了TOP AI CREW！今天起人才联盟正式招募！
-这里汇聚经过严格筛选的行业强者，多元思维碰撞，前沿技术共生。
-拒绝单打独斗，告别低效内耗，和一群同频的顶尖伙伴并肩前行，深耕AI领域，突破技术边界，一同站上行业前沿。
-敢想、敢闯、敢创造，下一个AI传奇，由我们共同书写！
-
-感谢大家持续关注 nature-skill。如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，也会尽量推进实现。我们同样欢迎 PR，但请务必按照 README 后面说明的格式提交，以便我们更高效地审核与合并。
+大家好，我是nature skills的创立者袁一哲，感谢大家持续关注 nature-skill。我们在抖音更新了很多视频教程，大家可以根据名称去检索查看，希望真心能够帮助到大家。如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，也会尽量推进实现。我们同样欢迎 PR，但请务必按照 README 后面说明的格式提交，以便我们更高效地审核与合并。
 <table>
   <tr>
     <td align="center">
@@ -12,42 +7,14 @@
       <img width="500" alt="6.17投资交流会" src="https://github.com/user-attachments/assets/1eefda21-86a4-4081-96e4-d40dea9e1e7b" />
     </td>
     <td align="center">
-      <b>个人微信</b><br>
-      <img width="500" alt="个人微信" src="https://github.com/user-attachments/assets/9e2931fb-748b-418e-97ab-0515d191633d" />
+      <b>青创人才交流群，记得入群修改备注</b><br>
+      <img width="500" alt="5分钟内修改备注" src="https://github.com/user-attachments/assets/2e541ba8-de46-485b-9caa-608244ad2639" />
     </td>
   </tr>
 </table>
 
-Hello everyone, I’m Yizhe Yuan, founder of Nature Skills.
-After being contacted by countless top AI talents through GitHub and other channels, I decided to launch TOP AI CREW. Starting today, our talent alliance is officially open for recruitment.
-This is a community of carefully selected industry leaders: a place where diverse perspectives collide, frontier technologies evolve, and ambitious builders grow together.
-No more working in isolation. No more wasting energy on inefficient solo battles. Here, you’ll move forward alongside a group of world-class, like-minded peers—deepening your expertise in AI, pushing technical boundaries, and advancing to the forefront of the industry together.
-Think boldly. Move fearlessly. Create relentlessly.
-The next AI legend will be written by us—together.
-
-Thank you for your continued interest in nature-skill.
-If you have any feature requests or suggestions, please feel free to submit an Issue. If we find the proposal meaningful and feasible, we will do our best to implement it. We also welcome Pull Requests (PRs). However, please follow the contribution format described later in this README to help us review and merge submissions more efficiently.
-
-## 📢 课题组诚招“医学 + AI”实习生
-<table border="0" cellpadding="10" cellspacing="0">
-  <tr>
-    <td width="34%" valign="top" align="center" style="border: none; background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
-      <span style="font-size: 14px; color: #666;">微信群聊</span><br>
-      <img width="1080" height="1632" alt="d5d363362ff7abc00a1a1b82b842f65c" src="https://github.com/user-attachments/assets/83aee670-fcb4-44d9-9bae-cf5ca39f555c" />
-      <div style="margin-top:10px; font-size: 13px; color: #666;">答疑交流群！进群请立刻改备注</div>
-    </td>
-    <td width="66%" valign="top" style="border: none; line-height: 1.6;">
-      还在寻找能够落地的 <strong>AI 前沿交叉赛道</strong>吗？我们课题组现向对“医学 + AI”充满热情的你发出邀请！<br><br>
-      这里有充足的计算资源，以及深耕医疗大模型（LLM）、视觉预训练、Prompt Engineering 及自动化医疗 AI Agent 的科研团队。我们更看重你的<strong>自驱力、学习能力与科研产出追求</strong>。<br><br>
-      项目信息文档链接：https://iigqjt2m4ia.feishu.cn/wiki/VIvDwHu18iTc6mk411xco8chnJb   密码：664#N926<br>
-      如果你有相关代码基础或项目经验，渴望在顶级交叉学科中积累成果，请将简历发送至：<br>
-      📧 <strong><a href="mailto:sjtu520aimedws@163.com" style="text-decoration: none; color: #0056b3;">sjtu520aimedws@163.com</a></strong><br>
-      <small>（标题格式：姓名-专业-医学AI科研申请）</small><br><br>
-      期待与你在 AI 赋能医疗的征途中，做出最扎实的科研工作！
-    </td>
-  </tr>
-</table>
-
+Hello everyone, I'm Yuan Yizhe, the founder of Nature Skills. Thank you all for your continuous attention to Nature-Skill. We have posted numerous video tutorials on Douyin, which you can search for by title to view. We sincerely hope these resources will be helpful to you.
+If you have any feature requests, feel free to submit an issue. Should we deem a request meaningful and feasible, we will strive to implement it. We also welcome pull requests (PRs). However, please make sure to submit them following the formatting guidelines outlined in the README file to allow us to review and merge your contributions more efficiently.
 ---
 
 ## Installation
