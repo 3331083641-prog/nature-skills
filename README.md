@@ -294,7 +294,7 @@ description: >-
 
 <div align="center">
 
-| 知识星球 | 来自粉丝的小感动 |
+| 知识星球 |
 | --- | --- |
 <img width="320" alt="知识星球" src="https://github.com/user-attachments/assets/d39a6259-3da8-410b-aa61-c7c1e51e48db" />
 </div>
