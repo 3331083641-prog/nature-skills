@@ -15,7 +15,7 @@
 
 - `cronjob(action="list")` 返回 `count=0`，没有任何 jobs。
 - `cronjob(action="run", job_id="a20ff6e2672d")` 返回 `Job with ID ... not found`。
-- `send_message(action="list")` 显示 `feishu:每日文献` 可用。
+- `send_message(action="list")` 显示 `feishu:your-group-name` 可用。
 - shell 中 `hermes` CLI 不可见：`bash: hermes: command not found`，无法用 CLI 侧进一步核查。
 - 当前容器无 `~/.hermes/logs/gateway.log`。
 
@@ -41,8 +41,8 @@
 
 飞书补发成功：
 
-- target: `feishu:每日文献`
-- chat_id: `oc_084da731064077e3fcd877e45e5acde6`
+- target: `feishu:文献推送`
+- chat_id: `oc_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`（替换为你的群 chat_id）
 - message_id: `om_x100b50dc2a1a40a8c108780f4171def`
 
 ## 归档结果
