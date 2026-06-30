@@ -35,7 +35,7 @@
 
 ## 安装
 
-`nature-skills` 是一组围绕 `SKILL.md` 组织的可复用技能包。`skills/` 下的每个顶层技能目录都是一个可安装单元，例如 `nature-*` 和 `openclaw-medical-skills`；`skills/_shared/` 是共享内容目录，安装完整仓库时也需要保留。
+`nature-skills` 是一组围绕 `SKILL.md` 组织的可复用技能包。`skills/` 下的每个顶层技能目录都是一个可安装单元，例如 `nature-*`；`skills/_shared/` 是共享内容目录，安装完整仓库时也需要保留。
 
 ### Codex 推荐安装方式
 
