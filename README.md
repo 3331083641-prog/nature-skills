@@ -35,24 +35,48 @@
 
 ## 安装
 
-`nature-skills` 是一组围绕 `SKILL.md` 组织的可复用技能包。每个 `skills/nature-*` 目录都是一个可安装单元，部分技能还依赖 `skills/_shared/` 中的共享内容。
+`nature-skills` 是一组围绕 `SKILL.md` 组织的可复用技能包。`skills/` 下的每个顶层技能目录都是一个可安装单元，例如 `nature-*` 和 `openclaw-medical-skills`；`skills/_shared/` 是共享内容目录，安装完整仓库时也需要保留。
 
 ### Codex 推荐安装方式
 
-最简单的方式是把仓库链接交给 Codex，并让它安装完整技能目录：
+推荐使用仓库自带脚本安装或更新 Codex skills。脚本会同步 `skills/` 下所有顶层技能目录，并在复制后做 `diff` 验证；它不会覆盖其他无关 Codex skills。
 
-```text
-https://github.com/Yuan1z0825/nature-skills.git
+```bash
+git clone https://github.com/Yuan1z0825/nature-skills.git
+cd nature-skills
+scripts/update-codex-skills.sh --pull
 ```
 
-推荐提示词：
+如果已经 clone 过仓库：
+
+```bash
+cd nature-skills
+scripts/update-codex-skills.sh --pull
+```
+
+验证当前 Codex 安装是否和这个 checkout 一致：
+
+```bash
+scripts/update-codex-skills.sh --check
+```
+
+如果你长期用这个脚本更新，并希望清理上游已经删除的旧技能目录：
+
+```bash
+scripts/update-codex-skills.sh --pull --prune
+```
+
+`--prune` 只会删除以前由这个脚本记录过、但当前仓库已经不再包含的目录。第一次运行没有历史记录时，它不会猜测删除旧目录。
+
+也可以把仓库链接交给 Codex，让 Codex 执行安装脚本。推荐提示词：
 
 ```text
 请从这个仓库安装 Codex skills：
 https://github.com/Yuan1z0825/nature-skills.git
 
-请把 skills/ 下的完整技能文件夹安装到我的 Codex skills 目录中，包括 skills/_shared。
-不要只复制 SKILL.md。
+请 clone 仓库后运行 scripts/update-codex-skills.sh --pull。
+安装后再运行 scripts/update-codex-skills.sh --check 验证。
+请保留 skills/ 下的完整技能目录，不要只复制 SKILL.md。
 ```
 
 如果只安装单个技能，请明确说明技能名：
@@ -68,15 +92,27 @@ https://github.com/Yuan1z0825/nature-skills.git
 
 ### 手动安装
 
+不推荐手动复制；如果你确实不想运行脚本，请复制 `skills/` 下所有顶层目录，而不是只复制 `nature-*`：
+
 ```bash
 git clone https://github.com/Yuan1z0825/nature-skills.git
 cd nature-skills
 mkdir -p ~/.codex/skills
-cp -R skills/_shared ~/.codex/skills/
-for d in skills/nature-*; do
-  cp -R "$d" ~/.codex/skills/
+for d in skills/*/; do
+  name="${d%/}"
+  name="${name##*/}"
+  rsync -a --delete "$d" "$HOME/.codex/skills/$name/"
 done
 ```
+
+安装脚本不会自动安装 Python 依赖。需要使用相关脚本或 MCP 服务时，再按需安装：
+
+```bash
+python -m pip install -r skills/nature-paper-to-patent/requirements.txt
+python -m pip install -r skills/nature-academic-search/mcp-server/requirements.txt
+```
+
+`nature-academic-search` 的 MCP 服务还需要单独配置 `PUBMED_EMAIL`，Scopus / ScienceDirect 等可选 provider 需要使用本机凭据配置，不要把 API key 写入仓库文件。
 
 安装后，请开启一个新的 Codex 会话，然后自然描述任务，例如：
 
@@ -94,17 +130,21 @@ done
 ```text
 skills/
 ├── _shared/              # 当技能引用 ../_shared 时需要保留
-└── nature-<topic>/
+├── nature-<topic>/
+│   ├── README.md
+│   ├── SKILL.md
+│   ├── manifest.yaml     # router-style 技能会包含
+│   ├── static/           # router-style 技能会包含
+│   └── references/...
+└── openclaw-medical-skills/
     ├── README.md
     ├── SKILL.md
-    ├── manifest.yaml     # router-style 技能会包含
-    ├── static/           # router-style 技能会包含
     └── references/...
 ```
 
 ### 非 Codex 场景
 
-用于 Claude Code 或其他 agent 时，建议保留一个稳定的仓库 clone，再创建轻量 subagent、slash command 或 custom prompt wrapper，指向真实的 `skills/nature-*/SKILL.md`，并保留 `skills/_shared/`。
+用于 Claude Code 或其他 agent 时，建议保留一个稳定的仓库 clone，再创建轻量 subagent、slash command 或 custom prompt wrapper，指向真实的 `skills/*/SKILL.md`，并保留 `skills/_shared/`。
 
 手动或非 Codex 使用时：
 
@@ -198,4 +238,3 @@ description: >-
 <div align="center">
 <img width="320" alt="知识星球" src="https://github.com/user-attachments/assets/6bd53184-8e41-41cf-a4fc-bc2edd74d81c" />
 </div>
-
